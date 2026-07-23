@@ -1,0 +1,4 @@
+type = "publication"
+title = "Publications"
+description = "Research publications on computational biology, graph learning, and non-coding RNA interaction prediction."
+source = "publications.bib"
