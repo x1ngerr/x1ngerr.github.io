@@ -41,7 +41,9 @@ function processSections(sections: SectionConfig[], locale?: string): SectionCon
         const bibtex = getBibtexContent('publications.bib', locale);
         const allPubs = parseBibTeX(bibtex, locale);
         const filteredPubs = section.filter === 'selected'
-          ? allPubs.filter((p) => p.selected)
+          ? allPubs.filter((p) =>
+            p.selected && p.authors.slice(0, 2).some((author) => author.isHighlighted)
+          )
           : allPubs;
         return {
           ...section,
